@@ -1,3 +1,5 @@
+import "./App.css";
+
 function App() {
   const isLoggedIn = true;
   const userName = "Mr Charles";
@@ -5,12 +7,23 @@ function App() {
   const sum = 2 + 3;
 
   return (
-    <h2 style={{color :"blue"}} >Welcome,
-      {userName} to tosin's First react + vite, connecting to Github and vercel project. <br/>
-      {isLoggedIn ? "Welcome Back!" : "Please Log In"}, <br />
-      I am {howOld} years old. <br/>
-      The sum of 2 and 3 is {sum}.
-    </h2> 
+    <div className="app-shell">
+      <main className="app-card">
+        <h1>Welcome, {userName}!</h1>
+        <p className="app-intro">
+          This is my first React + Vite app, connecting to GitHub and Vercel.
+        </p>
+
+        <div className={`status-badge {isLoggedIn ? "online" : "offline"}`}>
+          {isLoggedIn ? "Logged in" : "Please log in"}
+        </div>
+
+        <ul className="app-details">
+          <li>I am {howOld} years old.</li>
+          <li>The sum of 2 and 3 is {sum}.</li>
+        </ul>
+      </main>
+    </div>
   );
 }
 
